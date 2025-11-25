@@ -1,3 +1,17 @@
+Metadata-Version: 2.4
+Name: honeybadger
+Version: 0.1.0
+Summary: DataFrame with CSV reading, basic operations, filtering, and C library wrappers for FFTW (FFT) and GSL (statistics)
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: cffi>=1.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+
 # HoneyBadger
 
 DataFrame — CSV reading, basic operations, filtering, and C library wrappers — FFTW for FFT, GSL for statistics
