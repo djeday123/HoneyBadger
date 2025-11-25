@@ -244,6 +244,11 @@ class TestSkewness:
         """Test that skewness of empty data raises ValueError."""
         with pytest.raises(ValueError):
             skewness([])
+    
+    def test_skewness_insufficient_data_raises_error(self):
+        """Test that skewness with fewer than 3 data points raises ValueError."""
+        with pytest.raises(ValueError):
+            skewness([1.0, 2.0])
 
 
 class TestKurtosis:
@@ -262,6 +267,11 @@ class TestKurtosis:
         """Test that kurtosis of empty data raises ValueError."""
         with pytest.raises(ValueError):
             kurtosis([])
+    
+    def test_kurtosis_insufficient_data_raises_error(self):
+        """Test that kurtosis with fewer than 4 data points raises ValueError."""
+        with pytest.raises(ValueError):
+            kurtosis([1.0, 2.0, 3.0])
 
 
 class TestGSLAvailability:

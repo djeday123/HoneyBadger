@@ -332,8 +332,8 @@ def skewness(data: List[Union[int, float]]) -> float:
     if not data:
         raise ValueError("Data cannot be empty")
     
-    if len(data) < 2:
-        raise ValueError("Skewness requires at least 2 data points")
+    if len(data) < 3:
+        raise ValueError("Skewness requires at least 3 data points")
     
     c_array, n = _to_c_array(data)
     return _gsl.gsl_stats_skew(c_array, 1, n)
@@ -361,8 +361,8 @@ def kurtosis(data: List[Union[int, float]]) -> float:
     if not data:
         raise ValueError("Data cannot be empty")
     
-    if len(data) < 2:
-        raise ValueError("Kurtosis requires at least 2 data points")
+    if len(data) < 4:
+        raise ValueError("Kurtosis requires at least 4 data points")
     
     c_array, n = _to_c_array(data)
     return _gsl.gsl_stats_kurtosis(c_array, 1, n)

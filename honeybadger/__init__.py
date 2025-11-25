@@ -8,18 +8,23 @@ This library provides:
 """
 
 from honeybadger.dataframe import DataFrame
-from honeybadger.fftw_wrapper import fft, ifft
-from honeybadger.gsl_wrapper import mean, variance, std_dev, median, min_val, max_val
+from honeybadger.fftw_wrapper import fft, ifft, fft_real
+from honeybadger.gsl_wrapper import (
+    mean, variance, std_dev, median, min_val, max_val, skewness, kurtosis
+)
 
 __version__ = "0.1.0"
 __all__ = [
     "DataFrame",
     "fft",
     "ifft",
+    "fft_real",
     "mean",
     "variance",
     "std_dev",
     "median",
     "min_val",
     "max_val",
+    "skewness",
+    "kurtosis",
 ]
