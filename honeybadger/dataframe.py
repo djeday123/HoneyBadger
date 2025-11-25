@@ -356,7 +356,8 @@ class DataFrame:
         if isinstance(columns, str):
             columns = [columns]
         
-        new_columns = [col for col in self._columns if col not in columns]
+        columns_to_drop = set(columns)
+        new_columns = [col for col in self._columns if col not in columns_to_drop]
         data = {col: self._data[col] for col in new_columns}
         return DataFrame(data, new_columns)
     
@@ -455,7 +456,7 @@ class DataFrame:
             else:
                 median = sorted_values[n // 2]
             
-            variance = sum((v - mean) ** 2 for v in numeric_values) / n
+            variance = sum((v - mean) ** 2 for v in numeric_values) / (n - 1) if n > 1 else 0.0
             std = variance ** 0.5
             
             result[col] = {

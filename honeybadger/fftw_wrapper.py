@@ -3,6 +3,7 @@ FFTW wrapper for Fast Fourier Transform operations using cffi.
 """
 
 from typing import List, Optional, Tuple
+import cmath
 import math
 
 try:
@@ -321,7 +322,7 @@ class FFTWrapper:
         
         result = [complex(0)] * n
         for k in range(n // 2):
-            t = math.e ** complex(0, -2 * math.pi * k / n) * odd[k]
+            t = cmath.exp(complex(0, -2 * math.pi * k / n)) * odd[k]
             result[k] = even[k] + t
             result[k + n // 2] = even[k] - t
         
